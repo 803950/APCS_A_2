@@ -42,6 +42,10 @@ public class CelebrityGame
         boolean validator = false;
         if(guess.trim().toLowerCase().equalsIgnoreCase(gameCelebrity.getAnswer().trim().toLowerCase())){
             validator = true;
+            celebGameList.remove(0);
+            if (celebGameList.size() > 0){
+                gameCelebrity = celebGameList.get(0);
+            }
         }
         return validator;
     }
@@ -73,6 +77,7 @@ public class CelebrityGame
     {
         Celebrity celeb = new Celebrity(name, guess, type);
         celebGameList.add(celeb);
+       
     }
 
     /**
