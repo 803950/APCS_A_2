@@ -4,7 +4,6 @@
  * @version 1.4 17/09/2018
  */
 
-
 public class Celebrity{
     /**
      * The clue to determine the celebrity
@@ -13,9 +12,9 @@ public class Celebrity{
     /**
      * The answer or name of the celebrity.
      */
-     private String answer;
-     private String type;
-      /**
+    private String answer;
+    private String type;
+    /**
      * Creates a Celebrity instance without parameters
      *
      */
@@ -25,7 +24,7 @@ public class Celebrity{
         clue = "";
         type = "";
     }
-    
+
     /**
      * Creates a Celebrity instance with the supplied answer and clue
      * @param answer
