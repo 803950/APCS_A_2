@@ -31,11 +31,10 @@ public class Celebrity{
      * @param answer
      * @param clue
      */
-    public Celebrity(String answer, String clue, String type)
+    public Celebrity(String answer, String clue)
     {
         this.answer = answer;
         this.clue = clue;
-        this.type = type;
     }
 
     /**
