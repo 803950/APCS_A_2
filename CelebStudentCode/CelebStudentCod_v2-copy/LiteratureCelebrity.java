@@ -7,8 +7,16 @@
  */
 public class LiteratureCelebrity extends Celebrity
 {
-    public LiteratureCelebrity(String NAME, String CLUE)
+    private String book;
+    public LiteratureCelebrity(String NAME, String CLUE, String book)
     {
-        super (NAME, CLUE);
+        super(NAME, CLUE); // CHECK CARTOON CELEBRITY EXAMPLE
+        this.book = book;
+    }
+
+    public String getClue(Celebrity celeb){
+        if(Math.random()<0.2)
+            return "Wrote " + book;
+        return super.getClue();
     }
 }

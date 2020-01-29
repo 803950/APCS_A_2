@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.target=LiteratureCelebrity
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ LiteratureCelebrity\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=NAME\ CLUE
-comment1.target=LiteratureCelebrity(java.lang.String,\ java.lang.String)
-numComments=2
+comment1.params=NAME\ CLUE\ book
+comment1.target=LiteratureCelebrity(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=celeb
+comment2.target=java.lang.String\ getClue(Celebrity)
+numComments=3
