@@ -1,6 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.Random;
 /**
  * The Deck class represents a shuffled deck of cards.
  * It provides several operations including
@@ -11,7 +11,7 @@ public class Deck {
     /**
      * cards contains all the cards in the deck.
      */
-    private List<Card> deck;
+    private List<Card> cards;
 
     /**
      * size is the number of not-yet-dealt cards.
@@ -29,24 +29,22 @@ public class Deck {
      * @param values is an array containing all of the card point values.
      */
     public Deck(String[] ranks, String[] suits, int[] values) {
-        ArrayList<Card[]> deck = new ArrayList<Card>();
-        Array cardarray = new Array[3];
-        if(ranks.length == suits.length){
-            for(int i = 0; i< ranks.length; i++){
-                for(int j = 0; j< suits.length; j++){
-                    cardarray[0] = ranks[i];
-                    cardarray[1] = suits[j];
-                    cardarray[2] = values[i];
-                    deck.add(cardarray);
-                }
-            }
-        }
+        cards = new ArrayList<Card>();
+	for (int j = 0; j < ranks.length; j++) {
+		for (String suitString : suits) {
+			cards.add(new Card(ranks[j], suitString, values[j]));
+		}
+	}
+	size = cards.size();
+	toString();
+	shuffle();
+	toString();
     }
 
     public boolean isEmpty() {
         boolean empty = true;
-        if(deck.size() != 0){
-                boolean empty = false;
+        if(cards.size() != 0){
+                empty = false;
         }
         return empty;
     }
@@ -56,7 +54,7 @@ public class Deck {
      * @return the number of undealt cards in this deck.
      */
     public int size() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        return 0;
     }
 
     /**
@@ -64,7 +62,21 @@ public class Deck {
      * and reset the size to represent the entire deck.
      */
     public void shuffle() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        int ri;
+        int num;
+        ArrayList<Integer> randarr = new ArrayList<Integer>();
+        for(int i = 0 ; i <52; i++){
+            randarr.add(i);
+        }
+        List<Card> newarr = cards;
+        Random r = new Random();
+        for(int i = 0; i<52; i++){
+            num = r.nextInt(randarr.size());
+            ri = randarr.get(num);
+            randarr.remove(num);
+            newarr.set(0,cards.get(ri));
+        }
+        cards = newarr;
     }
 
     /**
@@ -73,7 +85,8 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+        Card card = new Card("","",0);
+        return card;
     }
 
     /**
