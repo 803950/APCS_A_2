@@ -72,7 +72,11 @@ public class ElevensBoard extends Board {
      */
     @Override
     public boolean anotherPlayIsPossible() {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+        List<Integer> Indexes = cardIndexes();
+        if(containsPairSum11(Indexes) || containsJQK(Indexes)){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -106,6 +110,19 @@ public class ElevensBoard extends Board {
      *              include a jack, a queen, and a king; false otherwise.
      */
     private boolean containsJQK(List<Integer> selectedCards) {
-        /* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+        boolean foundJack = false;
+        boolean foundQueen = false;
+        boolean foundKing = false;
+        for (Integer kObj : selectedCards) {
+            int ind = kObj.intValue();
+            if (cardAt(ind).rank().equals("jack")) {
+                foundJack = true;
+            } else if (cardAt(ind).rank().equals("queen")) {
+                foundQueen = true;
+            } else if (cardAt(ind).rank().equals("king")) {
+                foundKing = true;
+            }
+        }
+        return (foundJack && foundQueen && foundKing);
     }
 }
